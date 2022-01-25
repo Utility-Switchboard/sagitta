@@ -1,0 +1,345 @@
+.form-bank-details-section {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  height: 100%;
+  min-height: calc(100vh - 29.1rem);
+}
+
+.form-bank-details-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-bank-details-content {
+  border: 1px solid var(--primary_background);
+  border-radius: 2.5rem;
+  padding: 2rem 2rem;
+  height: auto;
+  min-height: 37rem;
+  margin-right: 0;
+  margin-bottom: 2.5rem;
+}
+
+.form-bank-details-content:nth-child(2) {
+  margin: 0;
+}
+
+.form-bank-details {
+  margin-bottom: 1.8rem;
+}
+
+.form-bank-details h1 {
+  color: var(--heading_secondary);
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.form-bank-details p {
+  color: var(--text_dark);
+}
+
+.form-bank-details-manually-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-bank-details-manually-btn button {
+  border: none;
+  color: var(--tertiary_background);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.form-bank-details-manually-btn button:hover {
+  color: var(--text_dark);
+}
+
+/* Inputs */
+.form-bank-details-input-container {
+  color: var(--heading_primary);
+  margin: 0 0 1rem 0;
+}
+
+/* Change autofill to any color  */
+.form-bank-details-input-container input:-webkit-autofill,
+.form-bank-details-input-container input:-webkit-autofill:hover,
+.form-bank-details-input-container input:-webkit-autofill:focus,
+.form-bank-details-input-container textarea:-webkit-autofill,
+.form-bank-details-input-container textarea:-webkit-autofill:hover,
+.form-bank-details-input-container textarea:-webkit-autofill:focus,
+.form-bank-details-input-container select:-webkit-autofill,
+.form-bank-details-input-container select:-webkit-autofill:hover,
+.form-bank-details-input-container select:-webkit-autofill:focus {
+  border: 1px solid #767676;
+  -webkit-box-shadow: none;
+  transition: none;
+}
+
+.form-bank-details-input-container input:disabled {
+  border: 1px solid #767676;
+}
+
+.form-bank-details-input-content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form-bank-details-input-content:nth-child(3) {
+  margin-bottom: 4.5rem;
+}
+
+.form-bank-details-input-element {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+.form-bank-details-input-element:nth-child(2) {
+  margin-right: 0;
+}
+
+.form-bank-details-input-element p {
+  color: var(--text_dark);
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: end;
+}
+
+.form-bank-details-input-container input {
+  padding: 1.1rem;
+  width: 100%;
+}
+
+.form-bank-details-input-container span {
+  color: var(--text_dark);
+  margin-left: 0.2rem;
+}
+
+.form-bank-details-input-container label {
+  margin-bottom: 0.5rem;
+}
+
+.form-bank-details-img-content {
+  display: none;
+}
+
+/* Summary-bank */
+.form-summary-bank-container {
+  border: 1px solid var(--primary_background);
+  border-radius: 2.5rem;
+  padding: 2rem 4rem;
+  margin-right: 2.5rem;
+  width: 100%;
+  color: var(--text_dark);
+  overflow-y: scroll;
+  font-size: 14px;
+}
+
+.form-summary-bank-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.form-summary-bank-container::-webkit-scrollbar-track {
+  background-color: #e4e4e4;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+}
+
+.form-summary-bank-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary_background);
+  border-radius: 1rem;
+}
+
+.form-summary-bank-container h1 {
+  text-align: center;
+  color: var(--text_dark);
+  margin-bottom: 1rem;
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.form-summary-bank-container h2 {
+  color: var(--heading_primary);
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.form-summary-bank-container p {
+  margin-bottom: 0;
+  width: 100%;
+  text-align: start;
+}
+
+.form-summary-bank-container span {
+  font-weight: bold;
+}
+
+.form-summary-bank-section:nth-child(2) {
+  margin-bottom: 2.5rem;
+}
+
+.form-summary-bank-element {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+/* Buttons */
+.form-bank-details-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+}
+
+.form-bank-details-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/** MEDIAQUERIES */
+@media (min-width: 646px) {
+  .form-bank-details-btn-container-custom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  .form-bank-details-btn-custom {
+    width: auto;
+  }
+
+  .form-bank-details-btn-custom:nth-child(1) {
+    margin-right: 2rem;
+    margin-bottom: 0rem;
+  }
+
+  .form-bank-details-input-container input {
+    padding: 0.8rem;
+    width: 15rem;
+  }
+
+  .form-bank-details-split-content {
+    display: flex;
+  }
+
+  .form-bank-details-img-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+
+  .form-bank-details-img-content img {
+    max-width: 15rem;
+    margin-top: 15%;
+  }
+
+  .form-bank-details-input-element p {
+    margin-right: 8%;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-bank-details-section {
+    width: 750px;
+  }
+
+  .assistant-bank-details-custom {
+    margin-left: 2rem;
+    height: 50rem;
+  }
+
+  .helper-bank-details {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-bank-details-section {
+    width: 970px;
+  }
+
+  .form-bank-details-container {
+    flex-direction: row;
+  }
+
+  .script-bank-details {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
+  .assistant-bank-details {
+    margin-top: 0;
+    margin-left: 2rem;
+  }
+
+  .assistant-bank-details-custom {
+    margin-left: 2rem;
+    height: 35rem;
+  }
+
+  .helper-bank-details {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .form-summary-bank-container {
+    height: 58.6rem;
+  }
+
+  .form-bank-details-content {
+    margin-right: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .form-bank-details-btn-container-custom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+
+  .form-bank-details-btn-custom {
+    width: 100%;
+  }
+
+  .form-bank-details-btn-custom:nth-child(1) {
+    margin-right: 0rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-bank-details-section {
+    width: 1170px;
+  }
+
+  .form-summary-bank-container {
+    height: 57.6rem;
+  }
+
+  .form-bank-details-btn-container-custom {
+    margin: 0;
+  }
+
+  .form-bank-details-btn-custom {
+    width: auto;
+  }
+
+  .form-bank-details-btn-custom:nth-child(1) {
+    margin-right: 2rem;
+    margin-bottom: 0rem;
+  }
+}

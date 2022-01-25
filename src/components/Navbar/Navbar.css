@@ -1,0 +1,290 @@
+.navbar-container {
+  margin-bottom: 15px;
+  width: 100%;
+  background-color: var(--tertiary_background);
+}
+.navupper-container {
+  margin-bottom: 25px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  min-height: 9rem;
+  padding-right: 25px;
+  padding-left: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Sign in */
+.sign-content {
+  width: auto;
+  height: auto;
+  display: flex;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: solid 2px #fff;
+  border-radius: 2rem;
+  color: #fff;
+  font-weight: bold;
+  text-transform: none;
+  cursor: pointer;
+  transition: 0.4s;
+  text-emphasis: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-content:hover {
+  background-color: #fff;
+  color: #ae2f9b;
+}
+
+.sign-content img {
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+.sign-content .user-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  margin-left: 0.5rem;
+}
+
+.sign {
+  margin: 0 0.5rem 0 0;
+}
+
+.dropdown-container {
+  display: flex;
+  background-color: var(--white);
+  justify-content: center;
+  width: 11rem;
+  display: none;
+  position: absolute;
+  border: 1px solid var(--tertiary_background);
+  border-radius: 0.5rem;
+  transition: all 0.4s;
+  margin-top: 1rem;
+}
+
+.dropdown-menu {
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.dropdown-item button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--tertiary_background);
+  display: block;
+  cursor: pointer;
+  transition: all 0.4s;
+  color: var(--text_dark);
+}
+
+.dropdown-item:last-child button {
+  border: none;
+}
+
+.dropdown-item button:hover {
+  background-color: var(--tertiary_background);
+  color: var(--white);
+}
+
+.active-dropdown {
+  display: block !important;
+}
+
+/* Progress bar */
+.progress-bar-container {
+  width: 40%;
+  text-align: center;
+  margin: 1rem 0 0 0;
+  display: none;
+}
+
+.progress-bar-container p {
+  margin: 1rem 0 0 0;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.progress-bar {
+  height: 1.2rem;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: var(--white);
+  border-radius: 2.5rem;
+}
+
+.percentage {
+  width: 0%;
+  height: 100%;
+  border-radius: 2.5rem;
+  background-color: var(--secondary_background);
+  background-size: 1rem 1rem;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Sidebar */
+.sidebar-container {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  background-color: var(--fourth_background);
+  overflow-x: hidden;
+  transition: 0.7s;
+  padding-top: 60px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+
+.sidebar a {
+  text-align: center;
+}
+
+.sidebar .sidebar-btn {
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: ease-out 0.3s;
+  position: relative;
+  z-index: 1;
+  background-color: transparent;
+  color: var(--primary_color);
+  transition: all 0.3s ease-out;
+  font-size: 1.8rem;
+}
+
+.sidebar .sidebar-btn:hover {
+  color: var(--white);
+}
+
+.sidebar .sidebar-btn.focus,
+.sidebar .sidebar-btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.sidebar .sidebar-btn:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--primary_color) !important;
+}
+
+.sidebar .sidebar-btn:hover:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+.active-sidebar {
+  width: 320px;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 3rem;
+  margin-left: 50px;
+  border: none;
+  background: none;
+  color: #d338ae;
+  outline: none;
+  cursor: pointer;
+}
+
+.sidebar .closebtn i {
+  font-size: 2.5rem;
+}
+
+/* Avatar status with picture */
+
+.avatar-container {
+  display: flex;
+  position: relative;
+}
+
+.status-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: green;
+  border: 2px solid var(--white);
+  bottom: 0;
+  right: 9px;
+  position: absolute;
+  transition: 0.4s all;
+}
+
+.break {
+  background-color: #f39f00;
+}
+
+/* Avatar status with icon */
+
+.status-circle-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  border: 2px solid var(--white);
+  bottom: -2px;
+  right: 6px;
+  position: absolute;
+  transition: 0.4s all;
+}
+
+.break {
+  background-color: #f39f00;
+}
+
+/* MEDIAQUERIES */
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    width: 750px;
+  }
+
+  .progress-bar-container {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar {
+    width: 1200px;
+  }
+}

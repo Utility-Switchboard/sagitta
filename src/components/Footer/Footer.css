@@ -1,0 +1,25 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--tertiary_background);
+  margin-top: 8.8rem;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer p {
+  color: var(--white);
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.footer-inner-container img {
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}

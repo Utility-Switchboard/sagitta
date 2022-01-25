@@ -1,0 +1,24 @@
+.error-container {
+    margin-top: 1rem;
+}
+
+.error-container p {
+    margin: 0 .5rem!important;
+}
+
+.error-message {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    padding: .2rem .4rem;
+    border-radius: .5rem;
+    display: inline-block;
+}
+
+.error-text {
+    color: #a94442!important;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}

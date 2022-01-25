@@ -1,0 +1,295 @@
+/* Header section */
+.postcode-header-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 8rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.postcode-header {
+  color: var(--heading_primary);
+  text-align: center;
+}
+
+.postcode-header h1 {
+  font-size: 4rem;
+  letter-spacing: 0.1rem;
+  margin: 0;
+}
+
+.postcode-header span {
+  color: var(--heading_secondary);
+}
+
+.postcode-script {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.postcode-script button {
+  border: none;
+  background-color: var(--white);
+  cursor: pointer;
+  color: var(--text_dark);
+  transition: all 0.4s;
+}
+
+.postcode-script button:hover {
+  color: var(--tertiary_background);
+}
+
+.postcode-script button span {
+  display: flex;
+  border-bottom: 1px solid var(--tertiary_background);
+}
+
+.postcode-img {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.postcode-img:hover {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.postcode-img img {
+  display: none;
+  width: 30rem;
+  fill: var(--primary_color);
+}
+
+/* Postcode input section */
+.postcode-input-section {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 40rem;
+  background-color: var(--fourth_background);
+  clip-path: polygon(0 0, 100% 25%, 100% 75%, 0% 100%);
+}
+
+.postcode-input-section h2 {
+  font-size: 2.2rem;
+  color: var(--heading_secondary);
+}
+
+.postcode-input-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  height: 500px;
+}
+
+.postcode-input-content {
+  display: inline-block;
+  background-color: var(--white);
+  padding: 0.5rem 0.5rem;
+  border-radius: 2.5rem;
+}
+
+.postcode-input-content input {
+  margin-left: 0.5rem;
+  border: 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ccc;
+  transition: 0.4s;
+  text-align: center;
+}
+
+.postcode-input-content input:focus {
+  outline: none;
+  border-bottom: 1px solid var(--primary_background);
+}
+
+.postcode-input-content button {
+  background-color: var(--tertiary_background);
+  color: var(--white);
+  border: 1px solid var(--tertiary_background);
+  border-radius: 2.5rem;
+  padding: 0.75rem 2.2rem;
+  font-size: small;
+  margin: 0 0 0 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.postcode-input-content button:hover {
+  color: var(--primary_color);
+  border: 1px solid var(--primary_color);
+  background-color: var(--white);
+}
+
+.postcode-trustpilot img {
+  margin-top: 1rem;
+}
+
+/* Panel section */
+.postcode-panel-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.postcode-panel-images-content {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.postcode-panel-content h1 {
+  color: var(--heading_secondary);
+  text-align: center;
+}
+
+.postcode-panel-images img {
+  padding: 1rem;
+}
+
+/* Postcode information */
+.postcode-information {
+  margin-top: 10rem;
+}
+
+.postcode-information {
+  color: var(--heading_secondary);
+}
+
+/* Script */
+.script-postcode {
+  display: none;
+  margin-left: 1.5rem;
+  transition: all 0.4s;
+}
+
+/** MEDIAQUERIES */
+@media (min-width: 576px) {
+  .postcode-panel-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .postcode-panel-images:nth-last-of-type(2) {
+    margin-top: 2rem;
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  .postcode-panel-images:nth-last-of-type(1) {
+    margin-top: 5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .postcode-header-section {
+    flex-direction: row;
+    width: 750px;
+  }
+
+  .postcode-header {
+    text-align: start;
+  }
+
+  .postcode-script {
+    text-align: start;
+  }
+
+  .postcode-img img {
+    display: block;
+  }
+
+  .postcode-input-container {
+    width: 750px;
+    align-items: center;
+  }
+
+  .postcode-panel-container {
+    width: 750px;
+  }
+
+  .d-none {
+    display: block;
+  }
+
+  .postcode-panel-images img {
+    padding: 0;
+  }
+
+  .script-postcode {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .postcode-header-section {
+    width: 970px;
+  }
+
+  .postcode-input-container {
+    width: 970px;
+  }
+
+  .postcode-panel-container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .postcode-header-section {
+    width: 1170px;
+  }
+
+  .postcode-input-container {
+    width: 1170px;
+  }
+
+  .postcode-panel-container {
+    width: 1170px;
+  }
+}
+
+@media (min-width: 1366px) {
+}
