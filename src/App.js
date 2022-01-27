@@ -11,7 +11,7 @@ function App() {
   let element = useRoutes([
     // A route object has the same properties as a <Route>
     // element. The `children` is just an array of child routes.
-    { path: "/home", element: <Home /> },
+    { path: "/", element: <Home /> },
   ]);
 
   return element;

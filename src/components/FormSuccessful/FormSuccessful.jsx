@@ -13,10 +13,9 @@ const FormSuccessful = ({ customerInformation }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     console.log(customerInformation);
-    let deal = {};
   }, []);
 
-  const newDeal = (e) => {
+  const newDeal = async (e) => {
     e.preventDefault();
     let monday = customerInformation.customAvai.monday_am
       ? "AM"
@@ -64,10 +63,11 @@ const FormSuccessful = ({ customerInformation }) => {
       service_number: customerInformation.service_number,
       customer_info: {
         email: customerInformation.customerDetails.email,
-        Salutation: "",
+        Salutation: customerInformation.salutation,
         Last_Name: customerInformation.customerDetails.last_name,
-        Full_Name: customerInformation.customerDetails.first_name,
+        First_Name: customerInformation.customerDetails.first_name,
         Mobile: customerInformation.customerDetails.phone,
+        marketing: customerInformation.boiler.marketing ? "Yes" : "No",
         Phone: "",
       },
       address: {
@@ -80,25 +80,20 @@ const FormSuccessful = ({ customerInformation }) => {
       },
       price: customerInformation.service_price,
       policy_type: customerInformation.service_type,
-      payment_date: "",
       payment_type: "",
       worldpay_auth_code: customerInformation.payment_ref,
       company: "Smart Plan",
       create_date: "",
-      one_off_stage: "",
+      one_off_stage: "Awaiting Action",
       boiler_type: customerInformation.fuel.gas_only ? "Gas" : "LGP",
       has_hot_water: customerInformation.hotwater.hot_yes ? "Yes" : "No",
       has_central_heating: customerInformation.heating.heat_yes ? "Yes" : "No",
       boiler_fault_code: customerInformation.boiler.fault_code,
-      boiler_manufacturer: "",
+      boiler_manufacturer: customerInformation.boiler.make,
       boiler_model: customerInformation.boiler.model,
       boiler_age: customerInformation.boiler.bage,
       boiler_issue_type: issue_type,
       customer_unavailability: "",
-      date_booked_in: "",
-      engineer_s_name: "",
-      engineer_cost: "",
-      net_profit: "",
       monday: monday,
       tuesday: tuesday,
       wednesday: wednesday,
@@ -110,7 +105,7 @@ const FormSuccessful = ({ customerInformation }) => {
       obj = {
         ...obj,
         account: {
-          account_name: "",
+          account_name: customerInformation.bankDetails.account_holder,
           account_number: customerInformation.bankDetails.account_number,
           sort_code: customerInformation.bankDetails.sort_code,
           service_number: customerInformation.service_number,
@@ -121,6 +116,30 @@ const FormSuccessful = ({ customerInformation }) => {
     }
 
     console.log(obj);
+
+    let policyStatus = await fetch(
+      "https://zoho-service.boilercompanyuk.com/CreateServicePolicy",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          data: obj,
+        }),
+      }
+    )
+      .then((response) => {
+        if (response.status === 200) {
+          console.log(response);
+          return response.json();
+        }
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          return response;
+        } else {
+          return false;
+        }
+      });
+    console.log(policyStatus);
     // Reload page
     // window.location.reload();
   };

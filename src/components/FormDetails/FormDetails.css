@@ -37,7 +37,13 @@
   color: var(--heading_primary);
   margin-top: 0;
 }
-
+.firstName {
+  display: flex;
+}
+.form-select-salut {
+  width: 3.2rem;
+  border-right: none;
+}
 .form-details p {
   color: var(--heading_secondary);
 }

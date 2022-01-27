@@ -130,22 +130,16 @@ function FormCustomer({
     }
   };
   const handleAgeChange = (e) => {
-    if (e.target.value === "1") {
+    if (e.target.value === "0") {
       updateDataCustomer({
         ...dataCustomer,
-        select: e.target.value,
-        bage: "< 12 Months",
-      });
-    } else if (e.target.value === "2") {
-      updateDataCustomer({
-        ...dataCustomer,
-        select: e.target.value,
-        bage: "> 12 Months",
+        select: "",
       });
     } else {
       updateDataCustomer({
         ...dataCustomer,
-        select: "",
+        select: e.target.value,
+        bage: e.target.value,
       });
     }
 
@@ -172,15 +166,15 @@ function FormCustomer({
     let service_type = "";
     if (
       customerInformation.servOption.repair &&
-      ((dataCustomer.select === "1" && dataCustomer.boiler_issue) ||
-        dataCustomer.select === "2")
+      ((parseInt(dataCustomer.select) < 13 && dataCustomer.boiler_issue) ||
+        parseInt(dataCustomer.select) === 13)
     ) {
       codeValue = "OOW1";
       price = 125;
       service_type = "Call Out & Diagnosis";
     } else if (
       customerInformation.servOption.repair &&
-      dataCustomer.select === "1" &&
+      parseInt(dataCustomer.select) < 13 &&
       !dataCustomer.boiler_issue
     ) {
       codeValue = "OOW2";
@@ -201,10 +195,13 @@ function FormCustomer({
       price = 80;
       service_type = "Boiler Service";
     }
-    let servNumber = await fetch("http://51.140.201.189:6001/getMaxService", {
-      method: "POST",
-      body: JSON.stringify({ code: codeValue }),
-    })
+    let servNumber = await fetch(
+      "https://address-server.boilercompanyuk.com/getMaxService",
+      {
+        method: "POST",
+        body: JSON.stringify({ code: codeValue }),
+      }
+    )
       .then((response) => {
         if (response.status === 200) {
           return response.json();
@@ -327,14 +324,47 @@ function FormCustomer({
                     {"Select an option..."}
                   </option>
                   <option key="1" value="1">
-                    {"< 12 Months"}
+                    {"1"}
                   </option>
                   <option key="2" value="2">
-                    {"> 12 Months"}
+                    {"2"}
+                  </option>
+                  <option key="3" value="3">
+                    {"3"}
+                  </option>
+                  <option key="4" value="4">
+                    {"4"}
+                  </option>
+                  <option key="5" value="5">
+                    {"5"}
+                  </option>
+                  <option key="6" value="6">
+                    {"6"}
+                  </option>
+                  <option key="7" value="7">
+                    {"7"}
+                  </option>
+                  <option key="8" value="8">
+                    {"8"}
+                  </option>
+                  <option key="9" value="9">
+                    {"9"}
+                  </option>
+                  <option key="10" value="10">
+                    {"10"}
+                  </option>
+                  <option key="11" value="11">
+                    {"11"}
+                  </option>
+                  <option key="12" value="12">
+                    {"12"}
+                  </option>
+                  <option key="13" value="13">
+                    {"> 12"}
                   </option>
                 </select>
               </div>
-              {dataCustomer.select === "1" ? (
+              {parseInt(dataCustomer.select) < 13 ? (
                 <div>
                   <div
                     className="form-address-input"
@@ -381,7 +411,7 @@ function FormCustomer({
                     </div>
                   </div>
                 </div>
-              ) : dataCustomer.select === "2" ? (
+              ) : dataCustomer.select === "13" ? (
                 <div
                   className="form-address-input"
                   style={{ position: "relative" }}

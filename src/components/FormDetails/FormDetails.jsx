@@ -25,6 +25,8 @@ const FormDetails = ({
   // disableInput
   const [disableInput, updateDisableInput] = useState(true);
   const [payment, updatePayment] = useState(false);
+  const [salutation, updateSalutation] = useState("");
+
   const [customAvai, updateCustomAvai] = useState({
     monday_am: false,
     monday_pm: false,
@@ -348,6 +350,7 @@ const FormDetails = ({
       customAvai: { ...customAvai },
       customerDetails: { ...customerData },
       daysOfWeek: daysOfWeek,
+      salutation: salutation,
     });
 
     console.log(customerInformation);
@@ -372,6 +375,7 @@ const FormDetails = ({
     delete copy_customer_switching["customAvai"];
     delete copy_customer_switching["customerDetails"];
     delete copy_customer_switching["daysOfWeek"];
+    delete copy_customer_switching["service_price"];
     // Update customer information
     updateCustomerInformation({ ...copy_customer_switching });
     // Update Error
@@ -412,7 +416,7 @@ const FormDetails = ({
       if (win.closed) {
         clearInterval(timer);
         let paymentStatus = await fetch(
-          "http://51.140.201.189:6001/getTransactStatus",
+          "https://address-server.boilercompanyuk.com/getTransactStatus",
           {
             method: "POST",
             body: JSON.stringify({
@@ -492,14 +496,44 @@ const FormDetails = ({
                   <label htmlFor="firstName">
                     First Name<span>*</span>
                   </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="first_name"
-                    onChange={handleChange}
-                    value={customerData.first_name || ""}
-                    disabled={disableInput}
-                  />
+                  <div className="firstName">
+                    <select
+                      defaultValue={0}
+                      onChange={(e) => updateSalutation(e.target.value)}
+                      className="form-select-salut"
+                      name="salutation"
+                      id="select"
+                    >
+                      {/* <option value="">- Select -</option> */}
+
+                      <option key="0" value="">
+                        {" "}
+                      </option>
+                      <option key="1" value="Mr.">
+                        {"Mr."}
+                      </option>
+                      <option key="2" value="Mrs.">
+                        {"Mrs."}
+                      </option>
+                      <option key="3" value="Ms.">
+                        {"Ms."}
+                      </option>
+                      <option key="4" value="Dr.">
+                        {"Dr."}
+                      </option>
+                      <option key="5" value="Prof.">
+                        {"Prof."}
+                      </option>
+                    </select>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="first_name"
+                      onChange={handleChange}
+                      value={customerData.first_name || ""}
+                      disabled={disableInput}
+                    />
+                  </div>
                 </div>
 
                 <div className="form-details-input-element-custom">

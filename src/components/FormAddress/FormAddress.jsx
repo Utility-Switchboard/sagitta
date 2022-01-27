@@ -91,7 +91,7 @@ function FormAddress({
     const fetchAPI = async () => {
       // const url = `https://ws.postcoder.com/pcw/${address_api}/address/uk/${postcodeValue.replace(/ /g, '').toLowerCase()}`;
       const key = process.env.REACT_APP_ADDRESS_API;
-      const url = `http://51.140.201.189:6001/getAddress`;
+      const url = `https://address-server.boilercompanyuk.com/getAddress`;
       const response_postcode = await fetch(url, {
         method: "POST",
         body: JSON.stringify({ code: postcodeValue }),
